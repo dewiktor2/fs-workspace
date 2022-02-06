@@ -846,10 +846,5 @@ nx affected:e2e</pre>
 export class NxWelcomeComponent implements OnInit {
     constructor() {}
 
-    ngOnInit(): void {
-        /*
-    
-    */
-        console.log('xd')
-    }
+    ngOnInit(): void { }
 }

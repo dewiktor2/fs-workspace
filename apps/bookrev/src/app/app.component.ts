@@ -8,7 +8,5 @@ import { Message } from '@fs-workspace/api-interfaces';
 })
 export class AppComponent {
     hello$ = this.http.get<Message>('/api/hello');
-    constructor(private http: HttpClient) {
-        console.log('');
-    };
+    constructor(private http: HttpClient) { };
 }
