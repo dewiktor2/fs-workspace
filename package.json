@@ -9,8 +9,7 @@
     "start:api": "nx serve api",
     "lint": "nx lint",
     "build": "nx build",
-    "test": "nx test",
-    "prepare": "husky install .config/husky"
+    "test": "nx test"
   },
   "private": true,
   "dependencies": {
