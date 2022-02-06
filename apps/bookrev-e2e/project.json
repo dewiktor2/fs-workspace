@@ -1,0 +1,28 @@
+{
+  "root": "apps/bookrev-e2e",
+  "sourceRoot": "apps/bookrev-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/bookrev-e2e/cypress.json",
+        "devServerTarget": "bookrev:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "bookrev:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/bookrev-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["bookrev"]
+}

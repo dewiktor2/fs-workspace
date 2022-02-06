@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "bookrev": "apps/bookrev",
+    "bookrev-e2e": "apps/bookrev-e2e"
+  }
+}
