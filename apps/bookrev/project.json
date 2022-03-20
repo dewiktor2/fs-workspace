@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/bookrev",
         "index": "apps/bookrev/src/index.html",
@@ -14,9 +16,17 @@
         "polyfills": "apps/bookrev/src/polyfills.ts",
         "tsConfig": "apps/bookrev/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/bookrev/src/favicon.ico", "apps/bookrev/src/assets"],
-        "styles": ["apps/bookrev/src/styles.scss"],
-        "scripts": []
+        "assets": [
+          "apps/bookrev/src/favicon.ico",
+          "apps/bookrev/src/assets",
+          "apps/bookrev/src/manifest.webmanifest"
+        ],
+        "styles": [
+          "apps/bookrev/src/styles.scss"
+        ],
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/bookrev/ngsw-config.json"
       },
       "configurations": {
         "production": {
@@ -38,7 +48,8 @@
               "with": "apps/bookrev/src/environments/environment.prod.ts"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "serviceWorker": true
         },
         "development": {
           "buildOptimizer": false,
@@ -63,7 +74,10 @@
       },
       "defaultConfiguration": "development",
       "options": {
-        "proxyConfig": "apps/bookrev/proxy.conf.json"
+        "proxyConfig": "apps/bookrev/proxy.conf.json",
+        "ssl": false,
+        "sslKey": "./cert/localhost.key",
+        "sslCert": "./cert/localhost.crt"
       }
     },
     "extract-i18n": {
@@ -83,7 +97,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/bookrev"],
+      "outputs": [
+        "coverage/apps/bookrev"
+      ],
       "options": {
         "jestConfig": "apps/bookrev/jest.config.js",
         "passWithNoTests": true
